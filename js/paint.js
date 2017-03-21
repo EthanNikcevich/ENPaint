@@ -7,15 +7,17 @@ var canvas, ctx, flag = false,
     prevY = 0,
     currY = 0,
     dot_flag = false;
-
 var x = "black",
-    y = 10;
-
+    y = 2;
+    p=0;
 function init() {
     canvas = document.getElementById('can');
     ctx = canvas.getContext("2d");
     w = canvas.width;
     h = canvas.height;
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, w, h);
+
 
     canvas.addEventListener("mousemove", function (e) {
         findxy('move', e)
@@ -33,7 +35,8 @@ function init() {
 
 function color(obj) {
     x=obj;
-    if (x == "#FFFFFF") y = 14;
+
+    if (x == "#ffffff") y = 35;
     else y = 2;
 
 }
@@ -46,13 +49,15 @@ function draw() {
     ctx.lineWidth = y;
     ctx.stroke();
     ctx.closePath();
+
 }
 
 function erase() {
     var m = confirm("Are you sure you want to clear?");
     if (m) {
-        ctx.clearRect(0, 0, w, h);
-        document.getElementById("canvasimg").style.display = "none";
+        ctx.fillStyle = "white";
+        ctx.fillRect(0, 0, w, h);
+        document.getElementById("canvasimg").style.display = "";
     }
 }
 
@@ -64,6 +69,26 @@ function save() {
     document.getElementById("canvasimg").style.top = "100%";
     document.getElementById("canvasimg").style.left = "0";
 }
+
+function widthh() {
+    y=document.getElementById("userWidth").value;
+    console.log(y)
+}
+
+function fontsss(x) {
+    l = x;
+}
+
+function text() {
+    ctx.fillStyle = x;
+    ctx.font = "30px" + l;
+    console.log(ctx.font = "30px" + l);
+    ctx.beginPath();
+    ctx.fillText(document.getElementById("userText").value,currX,currY);
+    ctx.closePath();
+}
+
+
 
 function findxy(res, e) {
     if (res == 'down') {

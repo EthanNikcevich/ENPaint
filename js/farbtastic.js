@@ -60,7 +60,6 @@ $(function(){
     $('#picker').click(function(e) { // click event handler
         bCanPreview = !bCanPreview;
         color('#' + ('00000' + dColor.toString(16)).substr(-6))
-        console.log('#' + ('00000' + dColor.toString(16)).substr(-6))
     });
     $('.preview').click(function(e) { // preview click
         $('.colorpicker').fadeToggle("slow", "linear");

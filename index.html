@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>ENPaint</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
     <script src="js/paint.js"></script>
     <script src="js/farbtastic.js"></script>
     <link rel="stylesheet" href="css/styles.css">
@@ -17,6 +16,20 @@
 <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
 <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;left:90%;">
 <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:4%;left:90%;">
+<input type="button" value="set width" id="width" size="30" onclick="widthh()" style="position:absolute;top:13%;left:90.2%;">
+<input type="button" value="text" id="textt" size="30" onclick="text()" style="position:absolute;top:21%;left:90.2%;">
+<div class="dropdown" style="position:absolute;top:24%;left:90.2%;">
+    <button class="dropbtn">Fonts</button>
+    <div class="dropdown-content">
+        <a href="#" id="arial" onclick="fontsss(' Arial')">Arial</a>
+        <a href="#" id="verdana" onclick="fontsss(' Verdana')">Verdana</a>
+        <a href="#" id="comicSansMS" onclick="fontsss(' Comic Sans MS')">Comic Sans MS</a>
+        <a href="#" id="timesNewRoman" onclick="fontsss(' Times New Roman')">Times New Roman</a>
+        <a href="#" id="impact" onclick="fontsss(' Impact')">Impact</a>
+    </div>
+</div>
+<!--<input type="button" value="set radius" id="radius" size="30" onclick="radius()" style="position:absolute;top:21%;left:90.2%;">-->
+
 <div class="preview" style="position:absolute;"></div>
 
 <div class="colorpicker" style="position:absolute;top:5%;display:none">
@@ -29,6 +42,15 @@
         <div><label>HEX</label> <input type="text" id="hexVal" onclick="color('#' + ('0000' + dColor.toString(16)).substr(-6))"/></div>
     </div>
 </div>
+<div><label style="position:absolute;top:8%;left:90.2%;">Line Width</label>
+    <input type="text" id="userWidth" style="position:absolute;top:10%;left:90.2%;"/>
+</div>
+<div><label style="position:absolute;top:16%;left:90.2%;">Text</label>
+    <input type="text" id="userText" style="position:absolute;top:18%;left:90.2%;"/>
+</div>
+<!--<div><label style="position:absolute;top:16%;left:90.2%;">Circle Radius</label>
+    <input type="text" id="userRadius" style="position:absolute;top:18%;left:90.2%;"/>
+</div>-->
 </body>
 </html>
 
