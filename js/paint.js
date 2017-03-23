@@ -18,7 +18,6 @@ function init() {
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, w, h);
 
-
     canvas.addEventListener("mousemove", function (e) {
         findxy('move', e)
     }, false);
@@ -31,11 +30,15 @@ function init() {
     canvas.addEventListener("mouseout", function (e) {
         findxy('out', e)
     }, false);
+
+    y=document.getElementById("userWidth").value;
+    ctx.lineWidth = y;
+
 }
 
 function color(obj) {
     x=obj;
-    ctx.fillStyle=x;
+
     ctx.strokeStyle=x;
 
     //if (x == "#ffffff") y = 35;
@@ -44,14 +47,13 @@ function color(obj) {
 }
 
 function draw() {
+
     drawCircle(currX, currY);
     ctx.beginPath();
     ctx.moveTo(prevX, prevY);
     ctx.lineTo(currX, currY);
     ctx.stroke();
     ctx.closePath();
-
-
 }
 
 function drawCircle(px, py) {
@@ -76,13 +78,18 @@ function save() {
     var dataURL = canvas.toDataURL();
     document.getElementById("canvasimg").src = dataURL;
     document.getElementById("canvasimg").style.position = "absolute";
-    document.getElementById("canvasimg").style.top = "100%";
-    document.getElementById("canvasimg").style.left = "0";
+    document.getElementById("canvasimg").style.top = "0";
+    document.getElementById("canvasimg").style.left = "100%";
 }
 
 function widthh() {
     y=document.getElementById("userWidth").value;
     ctx.lineWidth = y;
+    document.getElementById("demoWidth").innerHTML = "width: " + y;
+    if (y==0){
+        y=2;
+        console.log(y);
+    }
 }
 
 function fontsss(x) {
@@ -97,8 +104,6 @@ function text() {
     ctx.fillText(document.getElementById("userText").value,currX,currY);
     ctx.closePath();
 }
-
-
 
 function findxy(res, e) {
     if (res == 'down') {
@@ -131,6 +136,5 @@ function findxy(res, e) {
             draw();
         }
     }
-
 }
-color('black')
+color('black');
