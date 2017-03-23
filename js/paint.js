@@ -9,7 +9,7 @@ var canvas, ctx, flag = false,
     dot_flag = false;
 var x = "black",
     y = 2;
-    p=0;
+p=0;
 function init() {
     canvas = document.getElementById('can');
     ctx = canvas.getContext("2d");
@@ -35,21 +35,31 @@ function init() {
 
 function color(obj) {
     x=obj;
+    ctx.fillStyle=x;
+    ctx.strokeStyle=x;
 
-    if (x == "#ffffff") y = 35;
-    else y = 2;
+    //if (x == "#ffffff") y = 35;
+    //else y = 2; // I wouldn't do this
 
 }
 
 function draw() {
+    drawCircle(currX, currY);
     ctx.beginPath();
     ctx.moveTo(prevX, prevY);
     ctx.lineTo(currX, currY);
-    ctx.strokeStyle = x;
-    ctx.lineWidth = y;
     ctx.stroke();
     ctx.closePath();
 
+
+}
+
+function drawCircle(px, py) {
+
+    ctx.beginPath();
+    ctx.arc(px,py,y/2,0,2*Math.PI);
+    ctx.fill();
+    ctx.closePath();
 }
 
 function erase() {
@@ -72,7 +82,7 @@ function save() {
 
 function widthh() {
     y=document.getElementById("userWidth").value;
-    console.log(y)
+    ctx.lineWidth = y;
 }
 
 function fontsss(x) {
@@ -121,4 +131,6 @@ function findxy(res, e) {
             draw();
         }
     }
+
 }
+color('black')
