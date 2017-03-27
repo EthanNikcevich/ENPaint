@@ -16,8 +16,7 @@
 <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
 <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;left:90%;">
 <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:4%;left:90%;">
-<input type="button" value="set width" id="width" size="30" onclick="widthh()" style="position:absolute;top:13%;left:90.2%;">
-<p id="demoWidth" style="position:absolute;top:10.8%;left:95%;">width: 4</p>
+<p id="demoWidth" style="position:absolute;top:10.8%;left:90%;">width: 4</p>
 <input type="button" value="apply text" id="textt" size="30" onclick="text()" style="position:absolute;top:21%;left:90.2%;">
 <div class="dropdown" style="position:absolute;top:24%;left:90.2%;">
     <button class="dropbtn">Fonts</button>
@@ -44,7 +43,7 @@
     </div>
 </div>
 <div><label style="position:absolute;top:8%;left:90.2%;">Line Width</label>
-    <input type="range" id="userWidth" min="2" value="4" max="100" style="position:absolute;top:10%;left:90.2%;"/>
+    <input type="range" id="userWidth" min="2" value="4" max="100" onclick="widthh()" style="position:absolute;top:10%;left:90.2%;"/>
 </div>
 <div><label style="position:absolute;top:16%;left:90.2%;">Text</label>
     <input type="text" id="userText" style="position:absolute;top:18%;left:90.2%;"/>
