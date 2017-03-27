@@ -9,6 +9,7 @@ var canvas, ctx, flag = false,
     dot_flag = false;
 var x = "black",
     y = 2;
+    l = "Arial";
 p=0;
 function init() {
     canvas = document.getElementById('can');
@@ -39,7 +40,7 @@ function init() {
 function color(obj) {
     x=obj;
 
-    ctx.strokeStyle=x;
+    ctx.strokeStyle=obj;
 
     //if (x == "#ffffff") y = 35;
     //else y = 2; // I wouldn't do this
@@ -85,7 +86,7 @@ function save() {
 function widthh() {
     y=document.getElementById("userWidth").value;
     ctx.lineWidth = y;
-    document.getElementById("demoWidth").innerHTML = "width: " + y;
+    document.getElementById("demoWidth").innerHTML = "Width: " + y;
     if (y==0){
         y=2;
         console.log(y);
@@ -97,9 +98,10 @@ function fontsss(x) {
 }
 
 function text() {
+    o = document.getElementById("userSize").value+"px ";
     ctx.fillStyle = x;
-    ctx.font = "30px" + l;
-    console.log(ctx.font = "30px" + l);
+    ctx.font = o + l;
+    console.log(ctx.font = o + l);
     ctx.beginPath();
     ctx.fillText(document.getElementById("userText").value,currX,currY);
     ctx.closePath();
@@ -137,4 +139,4 @@ function findxy(res, e) {
         }
     }
 }
-color('black');
+

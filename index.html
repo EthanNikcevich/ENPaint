@@ -14,11 +14,21 @@
 <canvas id="can" width="1280" height="680" style="position:absolute;top:0;left:0;border:2px solid;"></canvas>
 
 <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
-<input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;left:90%;">
-<input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:4%;left:90%;">
-<p id="demoWidth" style="position:absolute;top:10.8%;left:90%;">width: 4</p>
-<input type="button" value="apply text" id="textt" size="30" onclick="text()" style="position:absolute;top:21%;left:90.2%;">
-<div class="dropdown" style="position:absolute;top:24%;left:90.2%;">
+
+<input type="button" value="Save" id="btn" size="30" onclick="save()" style="position:absolute;left:90.2%;">
+<input type="button" value="Clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:4%;left:90.2%;">
+<div><label style="position:absolute;top:8%;left:90.2%;">Line Width</label>
+    <input type="range" id="userWidth" min="2" value="4" max="100" onclick="widthh()" style="position:absolute;top:10%;left:90.2%;"/>
+</div>
+<p id="demoWidth" style="position:absolute;top:10.8%;left:90.2%;">Width: 4</p>
+<div><label style="position:absolute;top:16%;left:90.2%;">Text</label>
+    <input type="text" id="userText" style="position:absolute;top:18%;left:90.2%;"/>
+</div>
+<input type="button" value="Apply Text" id="textt" size="30" onclick="text()" style="position:absolute;top:21%;left:90.2%;">
+<div><label style="position:absolute;top:24%;left:90.2%;">Text Size</label>
+    <input type="text" id="userSize" size="4" style="position:absolute;top:26%;left:90.2%;"/>
+</div>
+<div class="dropdown" style="position:absolute;top:30%;left:90.2%;">
     <button class="dropbtn">Fonts</button>
     <div class="dropdown-content">
         <a href="#" id="arial" onclick="fontsss(' Arial')">Arial</a>
@@ -28,6 +38,7 @@
         <a href="#" id="impact" onclick="fontsss(' Impact')">Impact</a>
     </div>
 </div>
+
 <!--<input type="button" value="set radius" id="radius" size="30" onclick="radius()" style="position:absolute;top:21%;left:90.2%;">-->
 
 <div class="preview" style="position:absolute;"></div>
@@ -42,12 +53,8 @@
         <div><label>HEX</label> <input type="text" id="hexVal" onclick="color('#' + ('0000' + dColor.toString(16)).substr(-6))"/></div>
     </div>
 </div>
-<div><label style="position:absolute;top:8%;left:90.2%;">Line Width</label>
-    <input type="range" id="userWidth" min="2" value="4" max="100" onclick="widthh()" style="position:absolute;top:10%;left:90.2%;"/>
-</div>
-<div><label style="position:absolute;top:16%;left:90.2%;">Text</label>
-    <input type="text" id="userText" style="position:absolute;top:18%;left:90.2%;"/>
-</div>
+
+
 <!--<div><label style="position:absolute;top:16%;left:90.2%;">Circle Radius</label>
     <input type="text" id="userRadius" style="position:absolute;top:18%;left:90.2%;"/>
 </div>-->
