@@ -59,6 +59,8 @@ $(function(){
     });
     $('#picker').click(function(e) { // click event handler
         bCanPreview = !bCanPreview;
+        $('.colorpicker').fadeToggle("slow", "linear");
+        bCanPreview = true;
         color('#' + ('00000' + dColor.toString(16)).substr(-6))
     });
     $('.preview').click(function(e) { // preview click

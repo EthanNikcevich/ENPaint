@@ -109,9 +109,13 @@ function text() {
 }
 
 function canvasDimensions() {
-    canvas.width=document.getElementById("userCanvasWidth").value;
-    canvas.height=document.getElementById("userCanvasHeight").value;
-    widthh();
+    var m = confirm("This will erase your drawing. Are you sure you want to change the canvas dimensions?");
+    if (m) {
+        canvas.width = document.getElementById("userCanvasWidth").value;
+        canvas.height = document.getElementById("userCanvasHeight").value;
+        widthh();
+        color(x);
+    }
 }
 
 function findxy(res, e) {
