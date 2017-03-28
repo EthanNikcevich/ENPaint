@@ -10,7 +10,8 @@ var canvas, ctx, flag = false,
 var x = "black",
     y = 2;
     l = "Arial";
-p=0;
+
+    p=0;
 function init() {
     canvas = document.getElementById('can');
     ctx = canvas.getContext("2d");
