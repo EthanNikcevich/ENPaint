@@ -108,6 +108,12 @@ function text() {
     ctx.closePath();
 }
 
+function canvasDimensions() {
+    canvas.width=document.getElementById("userCanvasWidth").value;
+    canvas.height=document.getElementById("userCanvasHeight").value;
+    widthh();
+}
+
 function findxy(res, e) {
     if (res == 'down') {
         prevX = currX;
