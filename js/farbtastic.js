@@ -11,6 +11,7 @@ $(function(){
     // drawing active image
     var image = new Image();
     image.onload = function () {
+        $('.preview').css('backgroundColor','black');
         ctx.drawImage(image, 0, 0, image.width, image.height); // draw the image on the canvas
     };
 
@@ -43,10 +44,6 @@ $(function(){
             var imageData = ctx.getImageData(canvasX, canvasY, 1, 1);
             var pixel = imageData.data;
 
-            // update preview color
-            var pixelColor = "rgb("+pixel[0]+", "+pixel[1]+", "+pixel[2]+")";
-            $('.preview').css('backgroundColor', pixelColor);
-
             // update controls
             $('#rVal').val(pixel[0]);
             $('#gVal').val(pixel[1]);
@@ -61,7 +58,10 @@ $(function(){
         bCanPreview = !bCanPreview;
         $('.colorpicker').fadeToggle("slow", "linear");
         bCanPreview = true;
-        color('#' + ('00000' + dColor.toString(16)).substr(-6))
+        color('#' + ('00000' + dColor.toString(16)).substr(-6));
+        // update preview color
+        var pixelColor = '#' + ('00000' + dColor.toString(16)).substr(-6);
+        $('.preview').css('backgroundColor', pixelColor);
     });
     $('.preview').click(function(e) { // preview click
         $('.colorpicker').fadeToggle("slow", "linear");

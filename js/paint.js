@@ -70,7 +70,7 @@ function erase() {
     var m = confirm("Are you sure you want to clear?");
     if (m) {
         ctx.fillStyle = "white";
-        ctx.fillRect(0, 0, w, h);
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         document.getElementById("canvasimg").style.display = "";
     }
 }

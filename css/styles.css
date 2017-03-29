@@ -93,3 +93,7 @@
 .dropdown:hover .dropbtn {
     background-color: black;
 }
+#colorwheel5 {
+    height: 300px;
+    width: 300px;
+}
