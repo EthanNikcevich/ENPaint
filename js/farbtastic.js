@@ -56,7 +56,7 @@ $(function(){
     });
     $('#picker').click(function(e) { // click event handler
         bCanPreview = !bCanPreview;
-        $('.colorpicker').fadeToggle("slow", "linear");
+        $('.colorpicker').fadeToggle("fast", "linear");
         bCanPreview = true;
         color('#' + ('00000' + dColor.toString(16)).substr(-6));
         // update preview color
@@ -64,7 +64,7 @@ $(function(){
         $('.preview').css('backgroundColor', pixelColor);
     });
     $('.preview').click(function(e) { // preview click
-        $('.colorpicker').fadeToggle("slow", "linear");
+        $('.colorpicker').fadeToggle("fast", "linear");
         bCanPreview = true;
     });
 });
